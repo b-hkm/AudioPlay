@@ -5,7 +5,7 @@ CXX=g++
 source = main.cpp
 
 all: $(TARGET)
-	$(CXX) $*(source) -o $(TARGET)
+	$(CXX) $(source) -o $(TARGET)
 
 clean:
 	@echo "cleaning..."
