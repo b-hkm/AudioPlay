@@ -16,3 +16,8 @@ an Audio Player that runs in the Terminal uses the miniaudio library.
   - 'C' or 'c' to continue
   - 'a' and 'd' for seeking backward and forward in the timeline
   - 'E' for exiting
+
+
+
+#### sources:
+  miniaudio lib: [miniaudio github repo](https://github.com/mackron/miniaudio/)
