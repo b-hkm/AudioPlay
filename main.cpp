@@ -22,12 +22,6 @@ char c;
 void press();
 int main(int argc, char** argv)
 {
-
-    struct termios t;
-    tcgetattr(STDIN_FILENO, &t);
-    t.c_lflag &= ~(ICANON | ECHO);
-    tcsetattr(STDIN_FILENO, TCSANOW, &t);
-
     ma_result result;
     ma_decoder decoder;
     ma_device_config deviceConfig;
@@ -52,7 +46,12 @@ int main(int argc, char** argv)
         printf("Could not load file: %s\n", cfile);
         return -2;
     }
-
+    
+    struct termios t;
+    tcgetattr(STDIN_FILENO, &t);
+    t.c_lflag &= ~(ICANON | ECHO);
+    tcsetattr(STDIN_FILENO, TCSANOW, &t);
+    
     deviceConfig = ma_device_config_init(ma_device_type_playback);
     deviceConfig.playback.format   = decoder.outputFormat;
     deviceConfig.playback.channels = decoder.outputChannels;
