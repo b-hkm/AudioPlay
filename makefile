@@ -4,7 +4,7 @@ CXX=g++
 
 source = main.cpp
 
-all: $(TARGET)
+$(TARGET):
 	$(CXX) $(source) -o $(TARGET)
 
 clean:
